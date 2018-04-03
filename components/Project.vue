@@ -34,10 +34,17 @@ a {
 }
 .project {
   display: flex;
-  height: 48.6rem;
-  flex-direction: row;
-  margin: 13rem 0;
-  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+  margin: 9rem 0;
+
+  @include responsive($lg) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 48.6rem;
+    margin: 13rem 0;
+    position: relative;
+  }
 }
 
 // Project content
@@ -45,16 +52,28 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 37rem;
-  height: 100%;
+
   z-index: 5;
+
+  @include responsive($lg) {
+    max-width: 37rem;
+    height: 100%;
+  }
 }
 
 .project_count {
-  @include font($acaslonpro-regular, 2.2, 400, 3.3);
+  @include font($acaslonpro-regular, 1.6, 400, 1.3);
+
+  @include responsive($lg) {
+    @include font($acaslonpro-regular, 2.2, 400, 3.3);
+  }
 
   span {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+
+    @include responsive($lg) {
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -62,10 +81,19 @@ a {
   display: flex;
   flex-direction: column;
   align-items: space-between;
+  margin: 1.5rem 0;
+
+  @include responsive($lg) {
+    margin: 0;
+  }
 }
 
 .project_title {
-  @include font($avenir-black, 6.6, 900, 7.5);
+  @include font($avenir-black, 4.6, 900, 4.5);
+
+  @include responsive($lg) {
+    @include font($avenir-black, 6.6, 900, 7.5);
+  }
 }
 
 .project_year {
@@ -89,7 +117,10 @@ a {
 
 .project_description {
   @include font($acaslonpro-regular, 1.6, 400, 2.8);
-  max-width: 28.2rem;
+
+  @include responsive($lg) {
+    max-width: 28.2rem;
+  }
 }
 
 .project_role {
@@ -109,17 +140,50 @@ a {
 
 // Project image
 .project_image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  img {
+  @include responsive($lg) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  @include responsive($xl) {
+    width: 81rem;
+  }
+
+  @include responsive($xxl) {
     width: 89.3rem;
     height: 48.6rem;
+  }
+
+  img {
+    width: 100%;
+
+    @include responsive($lg) {
+      height: 100%;
+      width: inherit;
+    }
+
+    @include responsive($xl) {
+      width: 100%;
+      height: inherit;
+    }
   }
 }
 
 .project_wrapper {
   position: relative;
+
+  @include responsive($lg) {
+    width: 63.3rem;
+    height: 100%;
+  }
+
+  @include responsive($xl) {
+    width: inherit;
+    height: inherit;
+  }
 }
 .project_icon {
   position: absolute;

@@ -40,7 +40,11 @@ export default {
 <style scoped lang="scss">
 .label {
   font-size: 1.4rem;
-  margin-top: 13rem;
+  margin-top: 7rem;
+
+  @include responsive($lg) {
+    margin-top: 13rem;
+  }
 }
 
 .label_title {
