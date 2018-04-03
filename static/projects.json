@@ -16,5 +16,14 @@
       "A click game created for a school project of 5 persons. It takes place in space where you have to get gems as much as possible to build the spaceship and discover others planets. I was in charge of leading the project and develop it.",
     "role": "Developer",
     "image": "hero_background.jpg"
+  },
+  {
+    "link": "http://www.spacetraveler.xyz",
+    "title": "Medela 20 ans",
+    "year": "2017",
+    "description":
+      "During my internship in at Basaltiq, I had the responsibility of developing a website for the 20th anniversary of Medela, a baby equipment company.",
+    "role": "Developer",
+    "image": "hero_background.jpg"
   }
 ]
