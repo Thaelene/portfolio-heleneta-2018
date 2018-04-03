@@ -4,7 +4,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'portfolio-helene',
+    title: 'Helene Ta Portfolio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,7 +17,7 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   modules: ['nuxt-sass-resources-loader'],
-  sassResources: ['~assets/scss/base/_variables.scss'],
+  sassResources: ['~assets/scss/main.scss'],
   /*
   ** Build configuration
   */

@@ -1,13 +1,16 @@
 <template>
     <div>
+      <Header/>
         <h1 class="title">Salut</h1>
     </div>
 </template>
 
 <script>
+import Header from '~/components/Header.vue';
+
 export default {
   head: {
-    title: 'Helene Ta Contact me'
+    title: 'About Helene Ta'
   }
 };
 </script>

@@ -1,0 +1,20 @@
+[
+  {
+    "link": "http://www.domingoscharlotte.com",
+    "title": "Charlotte Domingos",
+    "year": "2018",
+    "description":
+      "Charlotte Domingos is a movie director who needed a website to display her late short movie entitled Its almost 8 and her previous works. My mission was to create her brand identity, work with her on the design on the website and develop it.",
+    "role": "Designer / Developer",
+    "image": "hero_background.jpg"
+  },
+  {
+    "link": "http://www.spacetraveler.xyz",
+    "title": "Space traveler",
+    "year": "2017",
+    "description":
+      "A click game created for a school project of 5 persons. It takes place in space where you have to get gems as much as possible to build the spaceship and discover others planets. I was in charge of leading the project and develop it.",
+    "role": "Developer",
+    "image": "hero_background.jpg"
+  }
+]
