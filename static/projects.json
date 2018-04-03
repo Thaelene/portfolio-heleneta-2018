@@ -18,12 +18,30 @@
     "image": "hero_background.jpg"
   },
   {
-    "link": "http://www.spacetraveler.xyz",
+    "link": "http://www.medela20ans.fr/",
     "title": "Medela 20 ans",
     "year": "2017",
     "description":
       "During my internship in at Basaltiq, I had the responsibility of developing a website for the 20th anniversary of Medela, a baby equipment company.",
     "role": "Developer",
+    "image": "hero_background.jpg"
+  },
+  {
+    "link": "/",
+    "title": "Planet Mars",
+    "year": "2017",
+    "description":
+      "This is a webGL experiment for a school project about Curiosity, a robot on Mars.",
+    "role": "Developer",
+    "image": "hero_background.jpg"
+  },
+  {
+    "link": "/",
+    "title": "Bananas journey",
+    "year": "2017",
+    "description":
+      "This is a webdoc about the journey of a banana, its impact on productors, local population, and on our environment. During two weeks and in group of 5, our goal was to sensibilize people about how destructive our way of consumption can be.",
+    "role": "Editorial strategist",
     "image": "hero_background.jpg"
   }
 ]
