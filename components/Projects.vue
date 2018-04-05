@@ -38,12 +38,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.projects {
+  background-color: $white;
+  margin-top: 100vh;
+}
 .label {
   font-size: 1.4rem;
-  margin-top: 7rem;
+  padding-top: 7rem;
 
   @include responsive($lg) {
-    margin-top: 13rem;
+    padding-top: 13rem;
   }
 }
 

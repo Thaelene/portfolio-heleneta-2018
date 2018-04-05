@@ -33,6 +33,30 @@ export default {};
 
 .footer_link {
   text-decoration: underline;
+  position: relative;
+
+  &:before {
+    content: '';
+    background-color: $pink;
+    color: $pink;
+    display: block;
+    height: 2px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    white-space: nowrap;
+    width: 0%;
+    will-change: width;
+    z-index: 2;
+    transition: width 0.4s 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
 }
 
 .footer_social {
@@ -40,8 +64,11 @@ export default {};
 
   ul {
     li {
-      display: inline-block;
       padding: 0 2rem;
+
+      @include responsive($md) {
+        display: inline-block;
+      }
     }
   }
 }

@@ -31,6 +31,10 @@ export default {
   background-size: cover;
   background-position: 40% 55%;
   height: 100vh;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  z-index: -111;
 
   @include responsive($md) {
     background-size: 260%;
