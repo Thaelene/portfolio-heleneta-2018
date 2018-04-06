@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   css: ['~/assets/scss/main.scss'],
   /*
@@ -26,14 +28,37 @@ module.exports = {
     ** Run ESLint on save
     */
     extend(config, { isDev, isClient }) {
+      config.resolve.alias['animation.gsap'] = path.join(
+        this.options.rootDir,
+        'node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
+      )
+      config.resolve.alias['TweenMax'] = path.join(
+        this.options.rootDir,
+        'node_modules/gsap/TweenMax.js'
+      )
+      config.resolve.alias['TimelineMax'] = path.join(
+        this.options.rootDir,
+        'node_modules/gsap/TimelineMax.js'
+      )
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        });
+        })
       }
+    },
+    vendor: ['scrollmagic']
+  },
+  plugins: [
+    {
+      src: '~plugins/scrollmagic.js',
+      ssr: false
+    },
+    {
+      src: '~plugins/animation.gsap.js',
+      ssr: false
     }
-  }
-};
+  ]
+}

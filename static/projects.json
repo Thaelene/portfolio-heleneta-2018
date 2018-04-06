@@ -6,7 +6,7 @@
     "description":
       "Charlotte Domingos is a movie director who needed a website to display her late short movie entitled Its almost 8 and her previous works. My mission was to create her brand identity, work with her on the design on the website and develop it.",
     "role": "Designer / Developer",
-    "image": "hero_background.jpg"
+    "image": "charlottedomingos.png"
   },
   {
     "link": "http://www.spacetraveler.xyz",
@@ -15,7 +15,7 @@
     "description":
       "A click game created for a school project of 5 persons. It takes place in space where you have to get gems as much as possible to build the spaceship and discover others planets. I was in charge of leading the project and develop it.",
     "role": "Developer",
-    "image": "hero_background.jpg"
+    "image": "spacetraveler.png"
   },
   {
     "link": "http://www.medela20ans.fr/",
@@ -24,7 +24,7 @@
     "description":
       "During my internship in at Basaltiq, I had the responsibility of developing a website for the 20th anniversary of Medela, a baby equipment company.",
     "role": "Developer",
-    "image": "hero_background.jpg"
+    "image": "medela.png"
   },
   {
     "link": "/",
@@ -42,6 +42,6 @@
     "description":
       "This is a webdoc about the journey of a banana, its impacts on productors, local population, and on our environment. During two weeks and in group of 5, our goal was to sensibilize people about how destructive our way of consumption can be.",
     "role": "Editorial strategist",
-    "image": "hero_background.jpg"
+    "image": "bananasjourney.png"
   }
 ]

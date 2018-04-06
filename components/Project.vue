@@ -1,12 +1,12 @@
 <template>
-<a :href="project.link" target="_blank">
+<a :href="project.link" ref="projectContainer" target="_blank">
   <div class="project">
     <div class="project_content">
-      <li class="project_count">{{index &lt; 10 ? `0${index + 1}` : index + 1}} <span>/ {{projectsLength &lt; 10 ? `0${projectsLength}` : projectsLength}}</span></li>
+      <li class="project_count" ref="projectCount">{{index &lt; 10 ? `0${index + 1}` : index + 1}} <span>/ {{projectsLength &lt; 10 ? `0${projectsLength}` : projectsLength}}</span></li>
       <div class="project_info">
-        <h3 class="project_title">{{ project.title }}</h3>
-        <span class="project_year">{{ project.year }}</span>
-        <p class="project_description">{{ project.description }}</p>
+        <h3 class="project_title" ref="projectTitle">{{ project.title }}</h3>
+        <span class="project_year" ref="projectYear">{{ project.year }}</span>
+        <p class="project_description" ref="projectDescription">{{ project.description }}</p>
       </div>
       <p class="project_role">{{ project.role }}</p>
     </div>
@@ -23,7 +23,31 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import { TweenMax } from 'gsap';
+
+let ScrollMagic;
+if (process.browser) {
+  ScrollMagic = require('scrollmagic');
+  require('animation.gsap');
+  // Init ScrollMagic Controller
+  Vue.prototype.$smController = new ScrollMagic.Controller();
+}
+
 export default {
+  mounted() {
+    const tween = TweenMax.to(this.$refs.projectTitle, 1, {
+      opacity: 1,
+      transform: 'translateY(-15px)'
+    });
+    const projectScene = new ScrollMagic.Scene({
+      triggerElement: this.$refs.projectContainer,
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(tween)
+      .addTo(this.$smController);
+  },
   props: ['project', 'index', 'projectsLength']
 };
 </script>
@@ -89,6 +113,8 @@ a {
 }
 
 .project_title {
+  opacity: 0;
+  transform: translateY(15px);
   @include font($avenir-black, 4.6, 900, 4.5);
 
   @include responsive($lg) {
@@ -183,6 +209,17 @@ a {
   @include responsive($xl) {
     width: inherit;
     height: inherit;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    background-color: $pink;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 .project_icon {
