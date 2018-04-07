@@ -41,64 +41,123 @@ if (process.browser) {
 }
 
 export default {
-  mounted() {
-    const tween = new TimelineMax()
-      // Content side animation
-      .to(
-        this.$refs.projectCount,
-        0.3,
-        {
-          opacity: 1,
-          y: -15
-        },
-        'start'
-      )
-      .to(this.$refs.projectTitle, 0.3, {
-        opacity: 1,
-        y: -15
-      })
-      .to(this.$refs.projectYear, 0.3, {
-        opacity: 1,
-        y: -15
-      })
-      .to(this.$refs.projectDescription, 0.3, {
-        opacity: 1,
-        y: -15
-      })
-      // Img side animation
-      .to(
-        this.$refs.projectMask,
-        0.5,
-        {
-          x: '0%'
-        },
-        'start'
-      )
-      .to(
-        this.$refs.projectImgContainer,
-        0.8,
-        {
-          width: '100%'
-        },
-        'start+=0.2'
-      )
-      .to(this.$refs.projectRole, 0.3, {
-        opacity: 1,
-        x: 0
-      })
-      .to(this.$refs.projectRoleLine, 0.3, {
-        scaleX: 1
-      });
+  methods: {
+    animation() {
+      if (window.innerWidth > 960) {
+        const tween = new TimelineMax()
+          // Content side animation
+          .to(
+            this.$refs.projectCount,
+            0.3,
+            {
+              opacity: 1,
+              y: -15
+            },
+            'start'
+          )
+          .to(this.$refs.projectTitle, 0.3, {
+            opacity: 1,
+            y: -15
+          })
+          .to(this.$refs.projectYear, 0.3, {
+            opacity: 1,
+            y: -15
+          })
+          .to(this.$refs.projectDescription, 0.3, {
+            opacity: 1,
+            y: -15
+          })
+          // Img side animation
+          .to(
+            this.$refs.projectMask,
+            0.5,
+            {
+              x: '0%'
+            },
+            'start'
+          )
+          .to(
+            this.$refs.projectImgContainer,
+            0.8,
+            {
+              width: '100%'
+            },
+            'start+=0.2'
+          )
+          .to(this.$refs.projectRole, 0.3, {
+            opacity: 1,
+            x: 0
+          })
+          .to(this.$refs.projectRoleLine, 0.3, {
+            scaleX: 1
+          });
+        return tween;
+      } else {
+        const tween = new TimelineMax()
+          // Content side animation
+          .to(
+            this.$refs.projectCount,
+            0.3,
+            {
+              opacity: 1,
+              y: -15
+            },
+            'start'
+          )
+          .to(this.$refs.projectTitle, 0.3, {
+            opacity: 1,
+            y: -15
+          })
+          .to(this.$refs.projectYear, 0.3, {
+            opacity: 1,
+            y: -15
+          })
+          .to(this.$refs.projectDescription, 0.3, {
+            opacity: 1,
+            y: -15
+          })
+          .to(this.$refs.projectRole, 0.3, {
+            opacity: 1,
+            x: 0
+          })
+          .to(this.$refs.projectRoleLine, 0.3, {
+            scaleX: 1
+          })
+          // Img side animation
+          .to(
+            this.$refs.projectMask,
+            0.5,
+            {
+              x: '0%'
+            },
+            'imgStart'
+          )
+          .to(
+            this.$refs.projectImgContainer,
+            0.8,
+            {
+              width: '100%'
+            },
+            'imgStart+=0.2'
+          );
 
+        return tween;
+      }
+    }
+  },
+  mounted() {
     // Init ScrollMagic scene
     const projectScene = new ScrollMagic.Scene({
       triggerElement: this.$refs.projectContainer,
       triggerHook: 0.5,
       reverse: false
     })
-      .setTween(tween)
+      .setTween(this.animation())
       .on('end', () => projectScene.destroy())
       .addTo(this.$smController);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.getWindowWidth);
   },
   props: ['project', 'index', 'projectsLength']
 };
@@ -268,6 +327,11 @@ a {
 .project_wrapper {
   overflow: hidden;
   position: relative;
+  height: 180px;
+
+  @include responsive ($md) {
+    height: 35rem;
+  }
 
   @include responsive($lg) {
     height: 100%;
@@ -287,7 +351,7 @@ a {
   left: 0;
   position: absolute;
   top: 0;
-  transform: translateX(-100%);
+  transform: translateX(-101%);
   width: 100%;
 }
 .project_icon {
