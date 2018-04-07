@@ -8,11 +8,17 @@
         <span class="project_year" ref="projectYear">{{ project.year }}</span>
         <p class="project_description" ref="projectDescription">{{ project.description }}</p>
       </div>
-      <p class="project_role">{{ project.role }}</p>
+      <div class="project_role_container">
+        <p class="project_role" ref="projectRole">{{ project.role }}</p>
+        <div class="project_role_line" ref="projectRoleLine"></div>
+      </div>
     </div>
     <div class="project_image">
-      <div class="project_wrapper">
-        <img :src="`images/${project.image}`">
+      <div class="project_wrapper" ref="projectWrapper">
+        <div class="project_mask" ref="projectMask"></div>
+        <div class="project_image_container" ref="projectImgContainer">
+          <img :src="`images/${project.image}`" ref="projectImg">
+        </div>
         <div class="project_icon">
           <svg id="arrow-icon" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125"><title>Arrow icon</title><path d="M71,50a2.37,2.37,0,0,0-.56-1.38l-16-17a2,2,0,0,0-2.83-.07,2,2,0,0,0-.08,2.82L64.37,48H31a2,2,0,0,0,0,4H64.37L51.53,65.62a2.09,2.09,0,0,0,.08,2.83,2,2,0,0,0,2.83-.07l16-17A1.77,1.77,0,0,0,71,50Z"/></svg>
         </div>
@@ -36,16 +42,62 @@ if (process.browser) {
 
 export default {
   mounted() {
-    const tween = TweenMax.to(this.$refs.projectTitle, 1, {
-      opacity: 1,
-      transform: 'translateY(-15px)'
-    });
+    const tween = new TimelineMax()
+      // Content side animation
+      .to(
+        this.$refs.projectCount,
+        0.3,
+        {
+          opacity: 1,
+          y: -15
+        },
+        'start'
+      )
+      .to(this.$refs.projectTitle, 0.3, {
+        opacity: 1,
+        y: -15
+      })
+      .to(this.$refs.projectYear, 0.3, {
+        opacity: 1,
+        y: -15
+      })
+      .to(this.$refs.projectDescription, 0.3, {
+        opacity: 1,
+        y: -15
+      })
+      // Img side animation
+      .to(
+        this.$refs.projectMask,
+        0.5,
+        {
+          x: '0%'
+        },
+        'start'
+      )
+      .to(
+        this.$refs.projectImgContainer,
+        0.8,
+        {
+          width: '100%'
+        },
+        'start+=0.2'
+      )
+      .to(this.$refs.projectRole, 0.3, {
+        opacity: 1,
+        x: 0
+      })
+      .to(this.$refs.projectRoleLine, 0.3, {
+        scaleX: 1
+      });
+
+    // Init ScrollMagic scene
     const projectScene = new ScrollMagic.Scene({
       triggerElement: this.$refs.projectContainer,
       triggerHook: 0.5,
       reverse: false
     })
       .setTween(tween)
+      .on('end', () => projectScene.destroy())
       .addTo(this.$smController);
   },
   props: ['project', 'index', 'projectsLength']
@@ -76,16 +128,16 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   z-index: 5;
 
   @include responsive($lg) {
-    max-width: 37rem;
     height: 100%;
+    max-width: 37rem;
   }
 }
 
 .project_count {
+  opacity: 0;
   @include font($acaslonpro-regular, 1.6, 400, 1.3);
 
   @include responsive($lg) {
@@ -102,9 +154,9 @@ a {
 }
 
 .project_info {
+  align-items: space-between;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
   margin: 1.5rem 0;
 
   @include responsive($lg) {
@@ -123,25 +175,27 @@ a {
 }
 
 .project_year {
-  @include font($avenir-heavy, 1.2, 900, 1.2);
   margin: 2.7rem 0 1.8rem;
+  opacity: 0;
   padding-left: 1rem;
   position: relative;
+  @include font($avenir-heavy, 1.2, 900, 1.2);
 
   &:before {
     content: '';
-    display: block;
-    width: 0.3rem;
-    height: 0.8rem;
     background-color: $pink;
-    position: absolute;
-    top: calc(50%-4px);
+    display: block;
+    height: 0.8rem;
     left: 0;
     margin-right: 1rem;
+    position: absolute;
+    top: calc(50%-4px);
+    width: 0.3rem;
   }
 }
 
 .project_description {
+  opacity: 0;
   @include font($acaslonpro-regular, 1.6, 400, 2.8);
 
   @include responsive($lg) {
@@ -149,29 +203,36 @@ a {
   }
 }
 
-.project_role {
-  @include font($avenir-heavy, 1.4, 900, 2.1);
-  text-align: right;
+.project_role_container {
+  align-items: center;
+  display: flex;
   margin-bottom: 2.5rem;
+  margin-left: auto;
+}
+.project_role {
+  opacity: 0;
+  text-align: right;
+  transform: translateX(-10px);
+  @include font($avenir-heavy, 1.4, 900, 2.1);
+}
 
-  &:after {
-    content: '';
-    display: inline-block;
-    width: 10rem;
-    height: 0.3rem;
-    background-color: #222;
-    margin-left: 2.2rem;
-  }
+.project_role_line {
+  background-color: #222;
+  height: 0.2rem;
+  margin-left: 2.2rem;
+  transform: scaleX(0);
+  transform-origin: left center;
+  width: 10rem;
 }
 
 // Project image
 .project_image {
   @include responsive($lg) {
-    position: absolute;
-    top: 0;
-    right: 0;
     height: 100%;
     overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   @include responsive($xl) {
@@ -179,56 +240,63 @@ a {
   }
 
   @include responsive($xxl) {
-    width: 89.3rem;
     height: 48.6rem;
+    width: 89.3rem;
   }
+}
+
+.project_image_container {
+  height: 100%;
+  position: relative;
+  width: 0%;
 
   img {
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
     width: 100%;
-
     @include responsive($lg) {
-      height: 100%;
       width: inherit;
     }
 
     @include responsive($xl) {
       width: 100%;
-      height: inherit;
     }
   }
 }
 
 .project_wrapper {
+  overflow: hidden;
   position: relative;
 
   @include responsive($lg) {
-    width: 63.3rem;
     height: 100%;
+    width: 63.3rem;
   }
 
   @include responsive($xl) {
-    width: inherit;
     height: inherit;
+    width: inherit;
   }
+}
 
-  &:after {
-    content: '';
-    display: block;
-    background-color: $pink;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+.project_mask {
+  background-color: $pink;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%);
+  width: 100%;
 }
 .project_icon {
   position: absolute;
-  top: 50%;
   right: 0;
+  top: 50%;
   svg {
-    width: 4rem;
     height: 4rem;
+    width: 4rem;
   }
 }
 </style>

@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   css: ['~/assets/scss/main.scss'],
@@ -17,7 +17,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#ffb48e' },
+  loading: '~/components/loading.vue',
   modules: ['nuxt-sass-resources-loader'],
   sassResources: ['~assets/scss/main.scss'],
   /*
@@ -31,22 +31,22 @@ module.exports = {
       config.resolve.alias['animation.gsap'] = path.join(
         this.options.rootDir,
         'node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
-      )
+      );
       config.resolve.alias['TweenMax'] = path.join(
         this.options.rootDir,
         'node_modules/gsap/TweenMax.js'
-      )
+      );
       config.resolve.alias['TimelineMax'] = path.join(
         this.options.rootDir,
         'node_modules/gsap/TimelineMax.js'
-      )
+      );
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
     },
     vendor: ['scrollmagic']
@@ -61,4 +61,4 @@ module.exports = {
       ssr: false
     }
   ]
-}
+};
