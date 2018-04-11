@@ -17,7 +17,11 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 3vw;
+  padding: 9vw 0;
+
+  @include responsive($md) {
+    padding: 3vw;
+  }
 }
 .header_logo {
   color: $white;
