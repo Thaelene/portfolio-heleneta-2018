@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div class="header_logo">
-            <nuxt-link to="/"><img src="~/static/images/logo.png" alt="Helene Ta Portfolio"></nuxt-link>
+            <nuxt-link to="/">Hélène Ta</nuxt-link>
         </div>
         <div class="header_nav">
             <nuxt-link to="/about" class="nav_link">About</nuxt-link>
@@ -15,13 +15,18 @@ export default {};
 
 <style scoped lang="scss">
 .header {
+  align-items: center;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 40px;
+  padding: 3vw;
+}
+.header_logo {
+  color: $white;
+  letter-spacing: 1px;
+  @include font($avenir-black, 2.4, 900, 0.154);
 }
 .nav_link {
-  @include font($avenir-black, 1.6, 900, 2.4);
   color: $white;
+  @include font($avenir-black, 1.6, 900, 2.4);
 }
 </style>

@@ -26,10 +26,7 @@ export default {
 
 <style scoped lang="scss">
 .hero {
-  background-image: url('~/static/images/hero_background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 40% 55%;
+  background-color: #181818;
   height: 100vh;
   position: fixed;
   top: 0%;
@@ -48,7 +45,7 @@ export default {
 }
 
 .heroIntroContainer {
-  width: 75%;
   margin: 0 auto;
+  width: 75%;
 }
 </style>

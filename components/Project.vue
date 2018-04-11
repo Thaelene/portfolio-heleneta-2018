@@ -36,6 +36,7 @@ let ScrollMagic;
 if (process.browser) {
   ScrollMagic = require('scrollmagic');
   require('animation.gsap');
+
   // Init ScrollMagic Controller
   Vue.prototype.$smController = new ScrollMagic.Controller();
 }
@@ -304,6 +305,51 @@ a {
   }
 }
 
+.project_wrapper {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    background: linear-gradient(-90deg, rgb(1, 1, 3), rgba(0, 0, 0, 0));
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(120%);
+    transition: all 0.4s ease-in 0.3s;
+    width: 0%;
+  }
+
+  &:hover {
+    &:after {
+      transform: translateX(0%);
+      width: 30%;
+    }
+
+    .project_icon {
+      transform: translateX(0);
+      width: 100%;
+    }
+  }
+
+  @include responsive ($md) {
+    height: 35rem;
+  }
+
+  @include responsive($lg) {
+    height: 100%;
+    width: 63.3rem;
+  }
+
+  @include responsive($xl) {
+    height: inherit;
+    width: inherit;
+  }
+}
+
 .project_image_container {
   height: 100%;
   position: relative;
@@ -324,26 +370,6 @@ a {
   }
 }
 
-.project_wrapper {
-  overflow: hidden;
-  position: relative;
-  height: 180px;
-
-  @include responsive ($md) {
-    height: 35rem;
-  }
-
-  @include responsive($lg) {
-    height: 100%;
-    width: 63.3rem;
-  }
-
-  @include responsive($xl) {
-    height: inherit;
-    width: inherit;
-  }
-}
-
 .project_mask {
   background-color: $pink;
   display: block;
@@ -355,10 +381,18 @@ a {
   width: 100%;
 }
 .project_icon {
+  padding: 2.5rem;
   position: absolute;
   right: 0;
+  text-align: right;
   top: 50%;
+  transform: translateX(120%);
+  transition: all 0.4s ease-in 0.3s;
+  width: 0;
+  z-index: 5;
+
   svg {
+    fill: white;
     height: 4rem;
     width: 4rem;
   }

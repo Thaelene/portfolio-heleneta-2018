@@ -1,12 +1,9 @@
 <template>
   <div class="heroIntro">
     <h1 class="heroIntro_name">Hélène Ta</h1>
-    <h2 class="heroIntro_subtitles">Front-end developer - 3rd year student at <a href="https://www.hetic.net" class="heroIntro_link">Hétic</a></h2>
+    <h2 class="heroIntro_subtitles">Creating and building useful projects with simplicity and conscientiousness</h2>
     <p class="heroIntro_description">
-      Trying to create and build useful projects - Simplicity and conscientiousness are my thing
-    </p>
-    <p class="heroIntro_description">
-      I am currently looking for a 4 months intership abroad.
+      I’m a french Front-end developer at HETIC and looking for a 4-month intership.
     </p>
   </div>
 </template>
@@ -17,29 +14,37 @@ export default {};
 
 <style scoped lang="scss">
 .heroIntro_name {
-  @include font($avenir-black, 4.6, 900, 9.4);
-  color: $white;
+  color: #000;
   letter-spacing: -0.4px;
+  position: relative;
+  @include font($avenir-black, 29.4, 900, 9.4);
 
   @include responsive($sm) {
     @include font($avenir-black, 5.6, 900, 9.4);
   }
 
   @include responsive($md) {
-    @include font($avenir-black, 7.6, 900, 9.4);
+    position: absolute;
+    top: 25vh;
+    right: 0;
+    width: 120%;
+    transform: translateX(45%);
+    @include font($avenir-black, 29.4, 900, 9.4);
   }
 }
 
 .heroIntro_subtitles {
-  @include font($avenir-medium,1.8, 500, 3.4);
   color: $white;
+  position: relative;
+  z-index: 3;
+  @include font($avenir-medium,1.8, 500, 3.4);
 
   @include responsive($sm) {
     @include font($avenir-black, 2.4, 900, 9.4);
   }
 
   @include responsive($md) {
-    @include font($avenir-medium,2.8, 500, 9.4);
+    @include font($avenir-black,4.8, 900, 6.4);
   }
 }
 
@@ -54,8 +59,10 @@ export default {};
   padding-top: 1.5rem;
 
   @include responsive($md) {
-    @include font($avenir-book, 1.8, 300, 3);
-    padding-top: 0;
+    color: #424242;
+    max-width: 55.7rem;
+    padding-top: 5.2rem;
+    @include font($avenir-medium, 2.4, 500, 3.7);
   }
 }
 </style>
