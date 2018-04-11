@@ -1,40 +1,49 @@
 <template>
-  <div class="heroIntro">
-    <h1 class="heroIntro_name">Hélène Ta</h1>
-    <h2 class="heroIntro_subtitles">Creating and building useful projects with simplicity and conscientiousness</h2>
-    <p class="heroIntro_description">
+  <div class="heroIntro" ref="heroIntro">
+    <h2 class="heroIntro_title" ref="heroIntroTitle">Creating and building useful projects with simplicity and conscientiousness</h2>
+    <p class="heroIntro_description" ref="heroIntroDescription">
       I’m a french Front-end developer at HETIC and looking for a 4-month intership.
     </p>
   </div>
 </template>
 
 <script>
-export default {};
+import { TweenMax } from 'gsap';
+
+export default {
+  methods: {
+    initIntroAnimation() {
+      new SplitText(this.$refs.heroIntroTitle, {
+        type: 'lines, words',
+        linesClass: 'heroIntroLines',
+        wordsClass: 'heroIntroWord'
+      });
+
+      //TweenMax.set('.heroIntroLines', { overflowY: 'hidden' });
+      TweenMax.set('.heroIntroLines', { opacity: 0, y: '100%' });
+      TweenMax.set('.heroIntro_title', { opacity: 1 });
+
+      this.triggerAnimation();
+    },
+    triggerAnimation() {
+      const timeline = new TimelineMax()
+        .staggerTo('.heroIntroLines', 1, { opacity: 1, y: '0%' }, 0.5)
+        .to(this.$refs.heroIntroDescription, 1, { opacity: 1 });
+    }
+  },
+  mounted() {
+    this.initIntroAnimation();
+  }
+};
 </script>
 
 <style scoped lang="scss">
-.heroIntro_name {
-  color: #000;
-  letter-spacing: -0.4px;
-  position: relative;
-  @include font($avenir-black, 29.4, 900, 9.4);
-
-  @include responsive($sm) {
-    @include font($avenir-black, 5.6, 900, 9.4);
-  }
-
-  @include responsive($md) {
-    position: absolute;
-    top: 25vh;
-    right: 0;
-    width: 120%;
-    transform: translateX(45%);
-    @include font($avenir-black, 29.4, 900, 9.4);
-  }
+.heroIntroWord {
+  line-height: 0;
 }
-
-.heroIntro_subtitles {
+.heroIntro_title {
   color: $white;
+  opacity: 0;
   position: relative;
   z-index: 3;
   @include font($avenir-medium,1.8, 500, 3.4);
@@ -54,9 +63,10 @@ export default {};
 }
 
 .heroIntro_description {
-  @include font($avenir-book, 1.4, 300, 2.1);
   color: $white;
+  opacity: 0;
   padding-top: 1.5rem;
+  @include font($avenir-book, 1.4, 300, 2.1);
 
   @include responsive($md) {
     color: #424242;

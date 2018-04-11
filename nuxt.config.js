@@ -49,7 +49,7 @@ module.exports = {
         });
       }
     },
-    vendor: ['scrollmagic']
+    vendor: ['scrollmagic', '~/plugins/splittext.js']
   },
   plugins: [
     {

@@ -19,9 +19,6 @@
         <div class="project_image_container" ref="projectImgContainer">
           <img :src="`images/${project.image}`" ref="projectImg">
         </div>
-        <div class="project_icon">
-          <svg id="arrow-icon" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125"><title>Arrow icon</title><path d="M71,50a2.37,2.37,0,0,0-.56-1.38l-16-17a2,2,0,0,0-2.83-.07,2,2,0,0,0-.08,2.82L64.37,48H31a2,2,0,0,0,0,4H64.37L51.53,65.62a2.09,2.09,0,0,0,.08,2.83,2,2,0,0,0,2.83-.07l16-17A1.77,1.77,0,0,0,71,50Z"/></svg>
-        </div>
       </div>
     </div>
   </div>
@@ -156,9 +153,6 @@ export default {
       .setTween(this.animation())
       .on('end', () => projectScene.destroy())
       .addTo(this.$smController);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.getWindowWidth);
   },
   props: ['project', 'index', 'projectsLength']
 };
@@ -310,31 +304,6 @@ a {
   overflow: hidden;
   position: relative;
 
-  &:after {
-    content: '';
-    background: linear-gradient(-90deg, rgb(1, 1, 3), rgba(0, 0, 0, 0));
-    display: block;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translateX(120%);
-    transition: all 0.4s ease-in 0.3s;
-    width: 0%;
-  }
-
-  &:hover {
-    &:after {
-      transform: translateX(0%);
-      width: 30%;
-    }
-
-    .project_icon {
-      transform: translateX(0);
-      width: 100%;
-    }
-  }
-
   @include responsive ($md) {
     height: 35rem;
   }
@@ -379,22 +348,5 @@ a {
   top: 0;
   transform: translateX(-101%);
   width: 100%;
-}
-.project_icon {
-  padding: 2.5rem;
-  position: absolute;
-  right: 0;
-  text-align: right;
-  top: 50%;
-  transform: translateX(120%);
-  transition: all 0.4s ease-in 0.3s;
-  width: 0;
-  z-index: 5;
-
-  svg {
-    fill: white;
-    height: 4rem;
-    width: 4rem;
-  }
 }
 </style>
