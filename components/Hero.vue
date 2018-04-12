@@ -7,7 +7,9 @@
         <HeroIntro/>
       </div>
       <div class="hero_scroll">
-        
+        <div class="hero_scroll_container">
+          <div class="scroll"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -50,8 +52,46 @@ export default {
   justify-content: space-between;
 }
 
-.heroIntroContainer {
+.heroIntroContainer,
+.hero_scroll {
   margin: 0 auto;
   width: 75%;
+}
+
+.hero_scroll {
+  position: relative;
+}
+
+.hero_scroll_container {
+  margin-bottom: 9vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: grey;
+  overflow: hidden;
+
+  @include responsive($md) {
+    margin-bottom: 3vw;
+  }
+}
+
+.scroll {
+  width: 0.3rem;
+  height: 7.5rem;
+  background: $white;
+  will-change: animation;
+  animation: scroll 2s ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+  from {
+    height: 7.5rem;
+    transform: translateY(-100%);
+  }
+  to {
+    height: 0.5rem;
+    transform: translateY(0%);
+  }
 }
 </style>
