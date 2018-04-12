@@ -2,7 +2,7 @@
 <a :href="project.link" ref="projectContainer" target="_blank">
   <div class="project">
     <div class="project_content">
-      <li class="project_count" ref="projectCount">{{index &lt; 10 ? `0${index + 1}` : index + 1}} <span>/ {{projectsLength &lt; 10 ? `0${projectsLength}` : projectsLength}}</span></li>
+      <div class="project_count" ref="projectCount">{{index &lt; 10 ? `0${index + 1}` : index + 1}} <span>/ {{projectsLength &lt; 10 ? `0${projectsLength}` : projectsLength}}</span></div>
       <div class="project_info">
         <h3 class="project_title" ref="projectTitle">{{ project.title }}</h3>
         <span class="project_year" ref="projectYear">{{ project.year }}</span>
@@ -17,8 +17,9 @@
       <div class="project_wrapper" ref="projectWrapper">
         <div class="project_mask" ref="projectMask"></div>
         <div class="project_image_container" ref="projectImgContainer">
-          <img :src="`images/${project.image}`" ref="projectImg">
+          <img :src="`images/${project.image}`" :alt="`images/${project.imageAlt}`" ref="projectImg">
         </div>
+        <div class="project_filter" ref="projectFilter"></div>
       </div>
     </div>
   </div>
@@ -40,6 +41,11 @@ if (process.browser) {
 
 export default {
   methods: {
+    changeCursor() {
+      if (this.$refs.projectTitle.innerHTML == 'Écritures numériques') {
+        this.$refs.projectWrapper.style.cursor = 'default';
+      }
+    },
     animation() {
       if (window.innerWidth > 960) {
         const tween = new TimelineMax()
@@ -153,6 +159,8 @@ export default {
       .setTween(this.animation())
       .on('end', () => projectScene.destroy())
       .addTo(this.$smController);
+
+    this.changeCursor();
   },
   props: ['project', 'index', 'projectsLength']
 };
@@ -179,6 +187,7 @@ a {
 
 // Project content
 .project_content {
+  cursor: default;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -300,9 +309,16 @@ a {
 }
 
 .project_wrapper {
+  cursor: url('~/static/images/arrow_right.png'), auto;
   height: 180px;
   overflow: hidden;
   position: relative;
+
+  &:hover {
+    .project_filter {
+      opacity: 1;
+    }
+  }
 
   @include responsive ($md) {
     height: 35rem;
@@ -317,6 +333,18 @@ a {
     height: inherit;
     width: inherit;
   }
+}
+
+.project_filter {
+  background-color: rgba(0, 0, 0, 0.473);
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: opacity 0.3s ease-in;
 }
 
 .project_image_container {

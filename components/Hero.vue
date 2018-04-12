@@ -52,13 +52,13 @@ export default {
   justify-content: space-between;
 }
 
-.heroIntroContainer,
-.hero_scroll {
+.heroIntroContainer {
   margin: 0 auto;
   width: 75%;
 }
 
 .hero_scroll {
+  height: 7.5rem;
   position: relative;
 }
 
@@ -66,7 +66,7 @@ export default {
   margin-bottom: 9vw;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 3vw;
   background-color: grey;
   overflow: hidden;
 

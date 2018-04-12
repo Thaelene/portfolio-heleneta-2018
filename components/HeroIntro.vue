@@ -3,7 +3,7 @@
     <h1 class="hero_name" ref="heroName">Hélène Ta</h1>
     <h2 class="heroIntro_title" ref="heroIntroTitle">Creating and building useful projects with simplicity and conscientiousness</h2>
     <p class="heroIntro_description" ref="heroIntroDescription">
-      I’m a french Front-end developer at HETIC and looking for a 4-month intership.
+      I’m a french Front-end developer at HETIC and looking for a 4-month intership abroad.
     </p>
   </div>
 </template>
@@ -129,13 +129,13 @@ export default {
 }
 
 .heroIntro_description {
-  color: $white;
+  color: #757575;
   opacity: 0;
   padding-top: 1.5rem;
   @include font($avenir-book, 1.4, 300, 2.1);
 
   @include responsive($md) {
-    color: #424242;
+    color: #757575;
     max-width: 55.7rem;
     padding-top: 5.2rem;
     @include font($avenir-medium, 2.4, 500, 3.7);

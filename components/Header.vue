@@ -18,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   padding: 9vw 0;
+  z-index: 5;
 
   @include responsive($md) {
     padding: 3vw;
