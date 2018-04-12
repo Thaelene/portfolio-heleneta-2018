@@ -29,9 +29,7 @@ export default {
       projects
     };
   },
-  mounted() {
-    console.log(this.projects);
-  }
+  mounted() {}
 };
 </script>
 
