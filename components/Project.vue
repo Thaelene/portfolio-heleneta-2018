@@ -41,11 +41,14 @@ if (process.browser) {
 
 export default {
   methods: {
+    // Change cursor on unvailable project
     changeCursor() {
       if (this.$refs.projectTitle.innerHTML == 'Écritures numériques') {
         this.$refs.projectWrapper.style.cursor = 'default';
       }
     },
+
+    // Animation on scroll
     animation() {
       if (window.innerWidth > 960) {
         const tween = new TimelineMax()

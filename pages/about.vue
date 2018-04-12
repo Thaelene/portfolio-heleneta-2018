@@ -23,7 +23,6 @@ export default {
 .about {
   height: 100vh;
 }
-
 .container {
   display: flex;
   flex-direction: column;

@@ -1,8 +1,10 @@
 <template>
   <div class="about_wrapper" ref="aboutWrapper">
-    <div class="about_mask" ref="aboutMask"></div>
-    <div class="about_portrait" ref="aboutPortrait">
-      <img src="images/helene-ta.png" alt="Hélène Ta's portrait">
+    <div class="about_image">
+      <div class="about_mask" ref="aboutMask"></div>
+      <div class="about_portrait" ref="aboutPortrait">
+        <img src="images/helene-ta.png" alt="Hélène Ta's portrait">
+      </div>
     </div>
 
     <div class="about_content" ref="aboutContent">
@@ -10,7 +12,7 @@
       <p class="about_description" ref="aboutDescription">
         My name is Hélène Ta, a 22-year-old front-end developer and a 3rd year student at <a href="https://www.hetic.net/" target="black" rel="noopener" class="about_link nav_link">Hetic</a>. Ex-intern at <a href="https://www.basaltiq.fr" target="black" rel="noopener" class="about_link nav_link">Basaltiq</a>, Paris in 2017. I thrive when I’m dealing with new challenges. I’m determined to create smooth experiences and discover new technologies.
       </p>
-      <p class="about_description about_important">
+      <p class="about_important" ref="aboutImportant">
         I’m a looking for a 4-month internship abroad from July to October 2018 where we can work together to build rewarding projects.
       </p>
       <nav class="about_socials" ref="aboutSocials">
@@ -32,6 +34,8 @@
           </li>
       </ul>
       </nav>
+
+      <p class="credits" ref="aboutCredits">Thanks to <a href="https://dribbble.com/tranminhvillageois" alt="Tran Minh Villageois Dribbble" class="nav_link">Tran Minh Villageois</a> for putting into vectors what I can only develop.</p>
     </div>
   </div>
 </template>
@@ -53,7 +57,44 @@ export default {
     title: 'About Hélène Ta'
   },
   methods: {
-    animation() {}
+    animationShowAbout() {
+      const tween = new TimelineMax()
+        .to(
+          this.$refs.aboutMask,
+          0.5,
+          {
+            x: '0%'
+          },
+          'imgStart'
+        )
+        .to(
+          this.$refs.aboutPortrait,
+          0.8,
+          {
+            width: '100%'
+          },
+          'imgStart+=0.2'
+        )
+        .to(this.$refs.aboutTitle, 0.3, {
+          opacity: 1,
+          y: -15
+        })
+        .to(this.$refs.aboutDescription, 0.3, {
+          opacity: 1,
+          y: -15
+        })
+        .to(this.$refs.aboutImportant, 0.3, {
+          opacity: 1,
+          y: -15
+        })
+        .to(this.$refs.aboutSocials, 0.3, {
+          opacity: 1
+        })
+        .to(this.$refs.aboutCredits, 0.3, {
+          opacity: 1
+        });
+      return tween;
+    }
   },
   mounted() {
     // Init ScrollMagic scene
@@ -62,8 +103,8 @@ export default {
       triggerHook: 0.5,
       reverse: false
     })
-      .setTween(this.animation())
-      .on('end', () => projectScene.destroy())
+      .setTween(this.animationShowAbout())
+      .on('end', () => aboutWrapper.destroy())
       .addTo(this.$smController);
   }
 };
@@ -78,9 +119,11 @@ export default {
 .about_wrapper {
   display: flex;
   flex-direction: column;
+  margin: 2rem 0;
 
   @include responsive ($md) {
     padding: 3vw;
+    margin: 0;
   }
 
   @include responsive ($lg) {
@@ -90,12 +133,22 @@ export default {
 
   @include responsive ($xl) {
     flex-direction: row;
-    padding: 3vw 9vw;
+    padding: 3vw 9vw 5vw;
   }
 
   @include responsive ($xxl) {
     flex-direction: row;
-    padding: 3vw 5vw;
+    padding: 0vw 5vw 5vw;
+  }
+}
+
+.about_image {
+  position: relative;
+  overflow: hidden;
+  width: 34rem;
+
+  @include responsive($xl) {
+    max-width: 64rem;
   }
 }
 
@@ -112,27 +165,26 @@ export default {
 
 .about_portrait {
   display: none;
+  height: 100%;
   max-width: 340px;
   overflow: hidden;
   order: 2;
+  width: 0;
 
   @include responsive($lg) {
     order: inherit;
     display: block;
-    max-width: 42rem;
+    max-width: 34rem;
   }
 
-  @include responsive($lg) {
-    max-width: 34rem;
+  @include responsive($xl) {
+    max-width: 64rem;
   }
   img {
     filter: grayscale(8%);
+    height: 100%;
     width: 100%;
-
-    @include responsive($lg) {
-      height: 100%;
-      width: auto;
-    }
+    object-fit: cover;
   }
 }
 
@@ -143,7 +195,7 @@ export default {
   max-width: 56rem;
 
   @include responsive($lg) {
-    margin-top: 10rem;
+    margin-top: 1rem;
     margin-left: 10rem;
     max-width: 43rem;
   }
@@ -155,6 +207,8 @@ export default {
 
 .about_title {
   color: $pink;
+  opacity: 0;
+  transform: translateY(15px);
   @include font($avenir-black, 4, 900, 6);
 
   @include responsive ($xxs) {
@@ -170,8 +224,11 @@ export default {
   }
 }
 
-.about_description {
+.about_description,
+.about_important {
   color: $black;
+  opacity: 0;
+  transform: translateY(15px);
   padding: 2rem 0 0;
   @include font($avenir-medium, 1.4, 500, 2);
 
@@ -195,11 +252,16 @@ export default {
 }
 
 .about_socials {
+  opacity: 0;
   margin: 9vw 0;
   @include font($avenir-black, 1.3, 900, 1.3);
 
   @include responsive ($md) {
     margin: 3vw 0;
+  }
+
+  @include responsive ($xxl) {
+    margin: 1vw 0;
   }
 
   ul {
@@ -222,6 +284,7 @@ export default {
 
 .nav_link {
   position: relative;
+  font-weight: 900;
 
   &:before {
     content: '';
@@ -248,5 +311,10 @@ export default {
       width: 100%;
     }
   }
+}
+
+.credits {
+  opacity: 0;
+  @include font($avenir-book, 1.2, 300, 1.3);
 }
 </style>
