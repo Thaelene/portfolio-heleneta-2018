@@ -18,7 +18,7 @@ export default {
     Footer
   },
   head: {
-    title: 'Helene Ta Portfolio'
+    title: 'Hélène Ta Portfolio 2018'
   }
 };
 </script>

@@ -15,6 +15,15 @@ export default {
   components: {
     Header,
     About
+  },
+  head: {
+    title: 'About Hélène Ta - 2018 Portfolio'
+  },
+  meta: {
+    hid: 'description',
+    name: 'description',
+    content:
+      "Hi, I'm Hélène Ta and this is a short description of what I do best. I'm Looking for a 4-month internship from July to October 2018."
   }
 };
 </script>

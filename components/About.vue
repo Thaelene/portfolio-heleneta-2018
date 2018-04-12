@@ -53,9 +53,6 @@ if (process.browser) {
   Vue.prototype.$smController = new ScrollMagic.Controller();
 }
 export default {
-  head: {
-    title: 'About Hélène Ta'
-  },
   methods: {
     animationShowAbout() {
       const tween = new TimelineMax()
