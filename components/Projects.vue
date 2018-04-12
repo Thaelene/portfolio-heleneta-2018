@@ -5,7 +5,6 @@
           <h4 class="label_title">Projects</h4>
           <p class="label_subtitles">Selected works</p>
       </div>
-      <ul>
         <Project 
         v-for="(project, index) in projects" 
         :key="project.title"
@@ -13,7 +12,6 @@
         :index="index"
         :projectsLength="projects.length"
         />
-      </ul>
       </div>
     </section>
 </template>

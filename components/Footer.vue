@@ -3,10 +3,10 @@
     <h5 class="footer_contact">Don't be shy, <a href="mailto:hello@heleneta.com" class="footer_link">say hi !</a></h5>
     <nav class="footer_social">
       <ul>
-        <li><a href="https://github.com/Thaelene">Github</a></li>
-        <li><a href="https://www.instagram.com/tahelene/">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/in/helene-ta/">LinkedIn</a></li>
-        <li><a href="https://www.behance.net/helene121001e2">Behance</a></li>
+        <li><a href="https://github.com/Thaelene" rel="noopener">Github</a></li>
+        <li><a href="https://www.instagram.com/tahelene/" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/helene-ta/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.behance.net/helene121001e2" rel="noopener">Behance</a></li>
       </ul>
     </nav>
     <p class="footer_bye">See you soon</p>

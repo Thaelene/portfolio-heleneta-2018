@@ -1,5 +1,5 @@
 <template>
-<a :href="project.link" ref="projectContainer" target="_blank">
+<a :href="project.link" ref="projectContainer" target="_blank" rel="noopener">
   <div class="project">
     <div class="project_content">
       <div class="project_count" ref="projectCount">{{index &lt; 10 ? `0${index + 1}` : index + 1}} <span>/ {{projectsLength &lt; 10 ? `0${projectsLength}` : projectsLength}}</span></div>

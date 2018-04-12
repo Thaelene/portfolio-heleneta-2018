@@ -52,6 +52,10 @@ export default {
   justify-content: space-between;
 }
 
+.header {
+  color: #fff;
+}
+
 .heroIntroContainer {
   margin: 0 auto;
   width: 75%;

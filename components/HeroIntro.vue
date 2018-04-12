@@ -3,7 +3,7 @@
     <h1 class="hero_name" ref="heroName">Hélène Ta</h1>
     <h2 class="heroIntro_title" ref="heroIntroTitle">Creating and building useful projects with simplicity and conscientiousness</h2>
     <p class="heroIntro_description" ref="heroIntroDescription">
-      I’m a french Front-end developer at HETIC and looking for a 4-month intership abroad.
+      I’m a french Front-end developer at HETIC and looking for a 4-month intership abroad from July to October 2018.
     </p>
   </div>
 </template>
@@ -121,11 +121,6 @@ export default {
 
 .heroIntroWord {
   line-height: 0;
-}
-
-.heroIntro_link {
-  color: $pink;
-  text-transform: uppercase;
 }
 
 .heroIntro_description {
