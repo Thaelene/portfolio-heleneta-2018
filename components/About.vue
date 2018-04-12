@@ -35,7 +35,7 @@
       </ul>
       </nav>
 
-      <p class="credits" ref="aboutCredits">Thanks to <a href="https://dribbble.com/tranminhvillageois" alt="Tran Minh Villageois Dribbble" class="nav_link">Tran Minh Villageois</a> for putting into vectors what I can only develop.</p>
+      <p class="credits" ref="aboutCredits">Thanks to <a href="https://dribbble.com/tranminhvillageois" alt="Tran Minh Villageois Dribbble" class="nav_link">Tran Minh Villageois</a> for putting into vectors a piece of myself.</p>
     </div>
   </div>
 </template>
@@ -138,7 +138,7 @@ export default {
 
   @include responsive ($xxl) {
     flex-direction: row;
-    padding: 0vw 5vw 5vw;
+    padding: 5vw;
   }
 }
 

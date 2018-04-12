@@ -58,7 +58,9 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: '~/components/loading.vue',
+  loading: {
+    color: '#ffb48e'
+  },
   modules: ['nuxt-sass-resources-loader'],
   sassResources: ['~assets/scss/main.scss'],
   /*

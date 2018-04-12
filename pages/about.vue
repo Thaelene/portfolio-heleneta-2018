@@ -29,9 +29,5 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-
-  @include responsive ($lg) {
-    justify-content: space-around;
-  }
 }
 </style>
