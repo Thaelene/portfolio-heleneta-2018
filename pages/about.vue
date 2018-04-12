@@ -21,7 +21,9 @@ export default {
 
 <style scoped lang="scss">
 .about {
-  height: 100vh;
+  @include responsive ($md) {
+    height: 100vh;
+  }
 }
 .container {
   display: flex;

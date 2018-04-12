@@ -21,7 +21,7 @@
   z-index: 5;
 
   @include responsive($md) {
-    padding: 3vw;
+    padding: 3rem;
   }
 }
 .header_logo {
