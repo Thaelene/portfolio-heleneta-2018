@@ -1,10 +1,8 @@
-[
-  {
+[{
     "link": "http://www.domingoscharlotte.com",
     "title": "Charlotte Domingos",
     "year": "2018",
-    "description":
-      "Charlotte Domingos is a movie director who needed a website to display her late short movie entitled Its almost 8 and her previous works. My mission was to create her brand identity, work with her on the design on the website and develop it.",
+    "description": "Charlotte Domingos is a movie director who needed a website to display her late short movie entitled Its almost 8 and her previous works. My mission was to create her brand identity, work with her on the design on the website and develop it.",
     "role": "Designer / Developer",
     "image": "charlottedomingos.jpg",
     "imageAlt": "It's almost 8 movie poster, directed by Charlotte Domingos"
@@ -13,8 +11,7 @@
     "link": "http://www.spacetraveler.xyz",
     "title": "Space traveler",
     "year": "2017",
-    "description":
-      "A click game created for a school project of 5 persons. It takes place in space where you have to get gems as much as possible to build the spaceship and discover others planets. I was in charge of leading the project and develop it.",
+    "description": "A click game created for a school project of 5 persons. It takes place in space where you have to get gems as much as possible to build the spaceship and discover others planets. I was in charge of leading the project and develop it.",
     "role": "Developer",
     "image": "spacetraveler.png",
     "imageAlt": "Screenshot from Space traveler game"
@@ -23,8 +20,7 @@
     "link": "https://www.sabre-france.com/",
     "title": "Sabre France",
     "year": "2017",
-    "description":
-      "During my internship in at Basaltiq, I had the opportunity to work on a Wordpress project which gave me a solid foundation for building any other Wordpress website.",
+    "description": "During my internship in at Basaltiq, I had the opportunity to work on a Wordpress project which gave me a solid foundation for building any other Wordpress website.",
     "role": "Developer",
     "image": "sabrefrance.jpg",
     "imageAlt": "Sabre France equipment picture"
@@ -33,18 +29,16 @@
     "link": "#",
     "title": "Écritures numériques",
     "year": "2018",
-    "description":
-      "An on going project working as a project manager for the University of Monteral. The Digital Textualities Canada Research Chair needs a brand new website, from its visual identity to its deployment.",
+    "description": "An on going project working as a project manager for the University of Monteral. The Digital Textualities Canada Research Chair needs a brand new website, from its visual identity to its deployment.",
     "role": "Project manager",
     "image": "ecrituresnumeriques.png",
     "imageAlt": "Digital Textualities Canada Research Chair poster"
   },
   {
-    "link": "/",
+    "link": "https://bananas.netlify.com/",
     "title": "Bananas journey",
     "year": "2017",
-    "description":
-      "This is a webdoc using Vue.js about the journey of a banana, its impacts on productors, local population, and on our environment. During two weeks and in group of 5, our goal was to sensibilize people about how destructive our way of consumption can be.",
+    "description": "This is a webdoc using Vue.js about the journey of a banana, its impacts on productors, local population, and on our environment. During two weeks and in group of 5, our goal was to sensibilize people about how destructive our way of consumption can be.",
     "role": "Editorial strategist",
     "image": "bananasjourney.jpg",
     "imageAlt": "Picture of a bananas plantation in Columbia"

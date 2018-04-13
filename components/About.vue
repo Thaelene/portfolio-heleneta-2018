@@ -35,7 +35,7 @@
       </ul>
       </nav>
 
-      <p class="credits" ref="aboutCredits">Thanks to <a href="https://dribbble.com/tranminhvillageois" alt="Tran Minh Villageois Dribbble" class="nav_link">Tran Minh Villageois</a> for putting into vectors a piece of myself.</p>
+      <p class="credits" ref="aboutCredits">Thanks to <a href="https://dribbble.com/tranminhvillageois" alt="Tran Minh Villageois Dribbble" class="nav_link">Tran Minh Villageois</a> for putting into vectors this portfolio.</p>
     </div>
   </div>
 </template>
