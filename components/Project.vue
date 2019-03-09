@@ -6,7 +6,10 @@
       <div class="project_info">
         <h3 class="project_title" ref="projectTitle">{{ project.title }}</h3>
         <span class="project_year" ref="projectYear">{{ project.year }}</span>
-        <p class="project_description" ref="projectDescription">{{ project.description }}</p>
+        <div class="project_description_container">
+        <p class="project_description" ref="projectDescriptionLeft">{{ project.descriptionLeft }}</p>
+        <p class="project_description" ref="projectDescriptionRight">{{ project.descriptionRight }}</p>
+        </div>
       </div>
       <div class="project_role_container">
         <p class="project_role" ref="projectRole">{{ project.role }}</p>
@@ -70,7 +73,11 @@ export default {
             opacity: 1,
             y: -15
           })
-          .to(this.$refs.projectDescription, 0.3, {
+          .to(this.$refs.projectDescriptionLeft, 0.3, {
+            opacity: 1,
+            y: -15
+          })
+          .to(this.$refs.projectDescriptionRight, 0.3, {
             opacity: 1,
             y: -15
           })
@@ -198,7 +205,7 @@ a {
 
   @include responsive($lg) {
     height: 100%;
-    max-width: 37rem;
+    width: 75%;
   }
 }
 
@@ -260,12 +267,30 @@ a {
   }
 }
 
+.project_description_container{
+  display: flex;
+  flex-direction: column;
+
+  @include responsive($lg) {
+    flex-direction: row;
+  }
+}
+
 .project_description {
   opacity: 0;
   @include font($acaslonpro-regular, 1.6, 400, 2.8);
 
+  &:nth-child(2n){
+    padding-top: 1rem;
+  }
+
   @include responsive($lg) {
-    max-width: 28.2rem;
+    max-width: 33.2rem;
+
+    &:nth-child(2n){
+      padding-top: 0;
+      margin-left: 2rem;
+    }
   }
 }
 
@@ -302,12 +327,12 @@ a {
   }
 
   @include responsive($xl) {
-    width: 81rem;
+    width: 27%;
   }
 
   @include responsive($xxl) {
     height: 48.6rem;
-    width: 89.3rem;
+    width: 27%rem;
   }
 }
 
@@ -332,10 +357,10 @@ a {
     width: 63.3rem;
   }
 
-  @include responsive($xl) {
-    height: inherit;
-    width: inherit;
-  }
+  // @include responsive($xl) {
+  //   height: inherit;
+  //   width: inherit;
+  // }
 }
 
 .project_filter {
