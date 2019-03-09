@@ -34,7 +34,7 @@ export default {
 
 <style scoped lang="scss">
 .hero {
-  background-color: #181818;
+  background-color: #F6F6F6;
   height: 100vh;
   position: fixed;
   top: 0%;

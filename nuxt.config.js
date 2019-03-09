@@ -17,7 +17,7 @@ module.exports = {
         hid: 'description',
         name: 'description',
         content:
-          "Hi, I'm Hélène Ta, a dedicated front-end developer. I'm Looking for a 4-month internship from July to October 2018."
+          "Hi, I'm Hélène Ta, a dedicated front-end developer. I'm looking for a 6-month internship from June to December 2019."
       },
       {
         hid: 'keywords',
@@ -101,6 +101,10 @@ module.exports = {
     },
     {
       src: '~plugins/animation.gsap.js',
+      ssr: false
+    },
+    {
+      src: '~plugins/ga.js',
       ssr: false
     }
   ]

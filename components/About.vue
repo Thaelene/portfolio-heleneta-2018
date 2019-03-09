@@ -10,10 +10,10 @@
     <div class="about_content" ref="aboutContent">
       <h1 class="about_title" ref="aboutTitle">Hello there,</h1>
       <p class="about_description" ref="aboutDescription">
-        My name is Hélène Ta, a 22-year-old front-end developer and a 3rd year student at <a href="https://www.hetic.net/" target="black" rel="noopener" class="about_link nav_link">Hetic</a>. Ex-intern at <a href="https://www.basaltiq.fr" target="black" rel="noopener" class="about_link nav_link">Basaltiq</a>, Paris in 2017. I thrive when I’m dealing with new challenges. I’m determined to create smooth experiences and discover new technologies.
+        My name is Hélène Ta, a 23-year-old front-end developer and a 4th year student at <a href="https://www.hetic.net/" target="black" rel="noopener" class="about_link nav_link">Hetic</a>. Ex-intern at <a href="http://gremlinworks.co.uk/" target="black" rel="noopener" class="about_link nav_link">gremlin works</a> & <a href="https://www.basaltiq.fr" target="black" rel="noopener" class="about_link nav_link">Basaltiq</a>. I thrive when I’m dealing with new challenges. I’m determined to create smooth and useful experiences and discover new technologies.
       </p>
       <p class="about_important" ref="aboutImportant">
-        I’m a looking for a 4-month internship abroad from July to October 2018 where we can work together to build rewarding projects.
+        I’m a looking for a 6-month internship abroad from June to December 2019 where we can work together to build rewarding projects.
       </p>
       <nav class="about_socials" ref="aboutSocials">
         <ul>
@@ -25,9 +25,6 @@
             </li>
           <li>
             <a href="https://www.linkedin.com/in/helene-ta/" target="blank" rel="noopener" class="nav_link">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://www.behance.net/helene121001e2" target="blank" rel="noopener" class="nav_link">Behance</a>
           </li>
           <li>
             <a href="http://www.heleneta.com/helenetaCV.pdf" target="blank" rel="noopener" class="nav_link">Resume</a>
