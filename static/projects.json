@@ -1,51 +1,48 @@
 [{
-    "link": "http://www.domingoscharlotte.com",
-    "title": "Charlotte Domingos",
+    "link": "https://tagether.fr",
+    "title": "Tagether",
     "year": "2018",
-    "descriptionLeft": "Charlotte Domingos is a movie director who needed a website to display her late short movie entitled Its almost 8 and her previous works. My mission was to create her brand identity, work with her on the design on the website and develop it.",
-    "descriptionRight": "Charlotte Domingos is a movie director who needed a website to display her late short movie entitled Its almost 8 and her previous works. My mission was to create her brand identity, work with her on the design on the website and develop it.",
-    "role": "Designer / Developer",
-    "image": "charlottedomingos.jpg",
-    "imageAlt": "It's almost 8 movie poster, directed by Charlotte Domingos"
+    "descriptionLeft": {
+      "first" : "Tagether is an app that allows users to discover local businesses and help them gain visibility. As the PM and host of the design thinking workshop, alongside with two UI/UX designers and one developer, we worked with the clients to find the concept and define the MVP of the app.",
+      "second" : "It was a really interesting workshop as the original concept of Tagether was entirely challenged and new needs from the potential users were found."
+    },
+    "descriptionRight": {
+      "first": "I also worked as PM and front-end developer on the website. An original theme wordpress was created and a workshop introducing Wordpress was given to the client.",
+      "second": "The main challenge was working with an entire remote team, we never saw each other (developers were in Taiwan, designer in USA and clients in France) and yet we managed to understand each other's visions and expectations."
+    },
+    "role": "PM / Design thinking / Developer",
+    "image": "tagether.png",
+    "imageAlt": "Tagether, a woman smiling"
   },
   {
-    "link": "http://www.spacetraveler.xyz",
-    "title": "Space traveler",
-    "year": "2017",
-    "descriptionLeft": "A click game created for a school project of 5 persons. It takes place in space where you have to get gems as much as possible to build the spaceship and discover others planets. I was in charge of leading the project and develop it.",
-    "descriptionRight": "A click game created for a school project of 5 persons. It takes place in space where you have to get gems as much as possible to build the spaceship and discover others planets. I was in charge of leading the project and develop it.",
-    "role": "Developer",
-    "image": "spacetraveler.png",
-    "imageAlt": "Screenshot from Space traveler game"
-  },
-  {
-    "link": "https://www.sabre-france.com/",
-    "title": "Sabre France",
-    "year": "2017",
-    "descriptionLeft": "During my internship in at Basaltiq, I had the opportunity to work on a Wordpress project which gave me a solid foundation for building any other Wordpress website.",
-    "descriptionRight": "During my internship in at Basaltiq, I had the opportunity to work on a Wordpress project which gave me a solid foundation for building any other Wordpress website.",
-    "role": "Developer",
-    "image": "sabrefrance.jpg",
+    "link": "https://www.hkind.co/",
+    "title": "hkind",
+    "year": "2018-2019",
+    "descriptionLeft": {
+      "first" : "hkind is a health for good startup, gathering all health initiatives in France in an app. It allows to all actors in the health field to discover and contribute to awesome initiatives.",
+      "second" : "This app is actually a PWA and using React.js framework. It is most challenging project I have yet to work on but also the most rewarding and instructive."
+    },
+    "descriptionRight": {
+      "first": "Working for a startup means to be very flexible and be very reactive to any changes. This MVP we are releasing soon, is months of user interviews, users testing and researches on technical architecture to create and support the product.",
+      "second": "This is an on-going project and the mobile app will be launched soon. Stay tuned !"
+    },"role": "Developer",
+    "image": "hkind.jpg",
     "imageAlt": "Sabre France equipment picture"
   },
   {
     "link": "#",
-    "title": "Écritures numériques",
-    "year": "2018",
-    "descriptionLeft": "An on going project working as a project manager for the University of Monteral. The Digital Textualities Canada Research Chair needs a brand new website, from its visual identity to its deployment.",
-    "descriptionRight": "An on going project working as a project manager for the University of Monteral. The Digital Textualities Canada Research Chair needs a brand new website, from its visual identity to its deployment.",
-    "role": "Project manager",
-    "image": "ecrituresnumeriques.png",
-    "imageAlt": "Digital Textualities Canada Research Chair poster"
-  },
-  {
-    "link": "https://bananas.netlify.com/",
-    "title": "Bananas journey",
-    "year": "2017",
-    "descriptionLeft": "This is a webdoc using Vue.js about the journey of a banana, its impacts on productors, local population, and on our environment. During Right weeks and in group of 5, our goal was to sensibilize people about how destructive our way of consumption can be.",
-    "descriptionRight": "This is a webdoc using Vue.js about the journey of a banana, its impacts on productors, local population, and on our environment. During Right weeks and in group of 5, our goal was to sensibilize people about how destructive our way of consumption can be.",
-    "role": "Editorial strategist",
-    "image": "bananasjourney.jpg",
-    "imageAlt": "Picture of a bananas plantation in Columbia"
+    "title": "Candriam",
+    "year": "2019",
+    "descriptionLeft": {
+      "first" : "In the context of the Digital Week (5-day conference about its digital transition), I worked as PM on 4 different parts of the event. First one was on the conception of the event with a Design Thinking and branding workshop. Second was for communication medium (motion design, emailing, prints. Third, for the website and forth was for the after event such as aftermovie and computer graphics.",
+      "second" : ""
+    },
+    "descriptionRight": {
+      "first": "Candriam is a asset management company with important responsibility towards the environment and society.",
+      "second": "Deadlines were the very challenge of this mission. We had a very tight schedule and I had to manage the different missions on multiple fronts in order to deliver on time."
+    },
+    "role": "Project Manager / Design Thinking",
+    "image": "candriam.png",
+    "imageAlt": "Screenshot from Space traveler game"
   }
 ]

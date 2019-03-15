@@ -10,9 +10,18 @@
       <p class="title_important">
         I am looking for a 6-month internship where we can work on a product together.
       </p>
-      <div>
-        <button class="btn-copy" ref="btnCopy" :v-clipboard="copyData" @click="triggerRevealAnimation">Reach me out !</button>
-        <span class="copy-details">email now copied on your clipboard ;)</span>
+      <div class="btn-wrapper" ref="btnCopy">
+        <button 
+          class="btn-copy"
+          :v-clipboard="copyData"
+          @click="triggerRevealAnimation"
+          @mouseover="isHovered = true"
+          @mouseleave="isHovered = false"
+        >
+          Reach me out !
+        </button>
+        <span class="copy-details">copied ;)</span>
+        <span class="copy-details--hovered" v-if="isHovered">Click to copy hello@heleneta.com</span>
       </div>
     </div>
   </div>
@@ -76,7 +85,8 @@ export default {
   },
   data(){
     return {
-      copyData: 'hello@heleneta.com'
+      copyData: 'hello@heleneta.com',
+      isHovered: false,
     }
   },
   mounted() {
@@ -184,6 +194,10 @@ export default {
   }
 }
 
+.btn-wrapper{
+  position: relative;
+}
+
 .btn-copy{
   @include font($avenir-black, 1.4, 900, 2.1);
   color: $pink;
@@ -209,5 +223,11 @@ export default {
     display: inline-block;
     margin-left: 1rem;
   }
+}
+.copy-details--hovered{
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  @include font($avenir-book, 1.2, 300, 1.4);
 }
 </style>

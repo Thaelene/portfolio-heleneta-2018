@@ -7,8 +7,12 @@
         <h3 class="project_title" ref="projectTitle">{{ project.title }}</h3>
         <span class="project_year" ref="projectYear">{{ project.year }}</span>
         <div class="project_description_container">
-        <p class="project_description" ref="projectDescriptionLeft">{{ project.descriptionLeft }}</p>
-        <p class="project_description" ref="projectDescriptionRight">{{ project.descriptionRight }}</p>
+        <div class="project_description" ref="projectDescriptionLeft">
+          <p v-for="paragraph in project.descriptionLeft" :key="paragraph.id">{{ paragraph }}</p>
+        </div>
+        <div class="project_description" ref="projectDescriptionRight">
+          <p v-for="paragraph in project.descriptionRight" :key="paragraph.id">{{ paragraph }}</p>
+        </div>
         </div>
       </div>
       <div class="project_role_container">
@@ -32,6 +36,7 @@
 <script>
 import Vue from 'vue';
 import { TweenMax } from 'gsap';
+import projects from '~/static/projects.json';
 
 let ScrollMagic;
 if (process.browser) {
@@ -43,10 +48,15 @@ if (process.browser) {
 }
 
 export default {
+  data() {
+    return {
+      projects
+    }
+  },
   methods: {
     // Change cursor on unvailable project
     changeCursor() {
-      if (this.$refs.projectTitle.innerHTML == 'Écritures numériques') {
+      if (this.$refs.projectTitle.innerHTML == 'Candriam') {
         this.$refs.projectWrapper.style.cursor = 'default';
       }
     },
@@ -289,7 +299,14 @@ a {
 
     &:nth-child(2n){
       padding-top: 0;
-      margin-left: 2rem;
+      margin-left: 7.5rem;
+    }
+  }
+
+  p{
+
+    &:nth-child(2n){
+      padding-top: 15px;
     }
   }
 }
