@@ -1,4 +1,5 @@
 <template>
+<div class="about">
   <div class="about_wrapper" ref="aboutWrapper">
     <div class="about_image">
       <div class="about_mask" ref="aboutMask"></div>
@@ -9,8 +10,28 @@
 
     <div class="about_content" ref="aboutContent">
       <h1 class="about_title" ref="aboutTitle">Hello there,</h1>
-      <p class="about_description" ref="aboutDescription">
-        My name is Hélène Ta, a 23-year-old front-end developer and a 4th year student at <a href="https://www.hetic.net/" target="black" rel="noopener" class="about_link nav_link">Hetic</a>. Ex-intern at <a href="http://gremlinworks.co.uk/" target="black" rel="noopener" class="about_link nav_link">gremlin works</a> & <a href="https://www.basaltiq.fr" target="black" rel="noopener" class="about_link nav_link">Basaltiq</a>. I thrive when I’m dealing with new challenges. I’m determined to create smooth and useful experiences and discover new technologies.
+      <div class="about_description" ref="aboutDescription">
+        <p>
+          My name is Hélène Ta, a 23-year-old front-end developer and a 4th year student at 
+          <a href="https://www.hetic.net/" target="black" rel="noopener" class="about_link nav_link">Hetic</a>. 
+          Ex front-end developer intern at <a href="http://gremlinworks.co.uk/" target="black" rel="noopener" class="about_link nav_link">gremlin works</a> (Taipei) & 
+          <a href="https://www.basaltiq.fr" target="black" rel="noopener" class="about_link nav_link">Basaltiq</a> (Paris). 
+        </p>
+        <p>
+          For two years now, I thrive as a front end developer and a project manager. I enjoy overviewing a project from scratch, from finding the right idea to creating it.
+        </p>
+        <p>
+          As both front end developer and PM, I understand technical issues since the very beginning and I am able to advise and offer insights 
+          early on, and save time, money and ressources. This is why I enjoy so much working as both, grasping the user’s needs, understand 
+          the client’s vision and developing it. 
+        </p>
+      </div>
+    </div>
+  </div>
+
+   <div class="about__largeContent">
+     <p class="about_textLarge" ref="aboutLarge">For the last few years, I am committed to help climate change and to advocate for sex equality. I also founded with three friends the Show&Tell, which is conferences intended as an introduction to web 
+       related subjects through different actors and experiences.
       </p>
       <p class="about_important" ref="aboutImportant">
         I’m a looking for a 6-month internship abroad from June to December 2019 where we can work together to build rewarding projects.
@@ -32,9 +53,12 @@
       </ul>
       </nav>
 
-      <p class="credits" ref="aboutCredits">Thanks to <a href="https://dribbble.com/tranminhvillageois" alt="Tran Minh Villageois Dribbble" class="nav_link">Tran Minh Villageois</a> for putting into vectors this portfolio.</p>
+      <p class="credits" ref="aboutCredits">Thanks to <a href="https://dribbble.com/tranminhvillageois" alt="Tran Minh Villageois Dribbble" class="nav_link">Tran Minh Villageois</a> for designing this portfolio.</p>
     </div>
-  </div>
+</div>
+  
+   
+
 </template>
 
 <script>
@@ -74,6 +98,10 @@ export default {
           y: -15
         })
         .to(this.$refs.aboutDescription, 0.3, {
+          opacity: 1,
+          y: -15
+        })
+        .to(this.$refs.aboutLarge, 0.3, {
           opacity: 1,
           y: -15
         })
@@ -218,7 +246,7 @@ export default {
   }
 }
 
-.about_description,
+.about_description, .about_textLarge,
 .about_important {
   color: $black;
   opacity: 0;
@@ -233,12 +261,37 @@ export default {
   @include responsive ($md) {
     @include font($avenir-medium, 1.6, 500, 2.5);
   }
+
+  p{
+    padding-bottom: 1em;
+  }
 }
 
 .about_link {
   color: #666;
   font-family: $avenir-black;
   font-weight: 900;
+}
+
+.about__largeContent{
+  margin: 2rem 0;
+
+  @include responsive ($md) {
+    padding: 0 3vw;
+    margin: 0;
+  }
+
+  @include responsive ($lg) {
+    padding: 0 3vw;
+  }
+
+  @include responsive ($xl) {
+    padding: 0vw 9vw 5vw;
+  }
+
+  @include responsive ($xxl) {
+    padding: 0 5vw;
+  }
 }
 
 .about_important {

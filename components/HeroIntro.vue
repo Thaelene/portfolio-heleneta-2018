@@ -157,6 +157,15 @@ export default {
     @include font($avenir-black,4.8, 900, 6.4);
   }
 
+  h2{
+    font-size: 4.6rem;
+    padding-bottom: 0.5em;
+
+    @include responsive($md) {
+    padding-bottom: 0;
+    }
+  }
+
   .title_text{
     @include font($acaslonpro-regular,1.6, 500, 2.4);
 
@@ -196,6 +205,11 @@ export default {
 
 .btn-wrapper{
   position: relative;
+  padding-top: 0.5em;
+
+  @include responsive($md) {
+    padding-top: 0;
+    }
 }
 
 .btn-copy{
