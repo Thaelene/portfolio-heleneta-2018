@@ -34,7 +34,7 @@
        related subjects through different actors and experiences.
       </p>
       <p class="about_important" ref="aboutImportant">
-        I’m a looking for a 6-month internship abroad from June to December 2019 where we can work together to build rewarding projects.
+        I’m a looking for a 6-month internship from June to December 2019 where we can work together to build rewarding projects.
       </p>
       <nav class="about_socials" ref="aboutSocials">
         <ul>

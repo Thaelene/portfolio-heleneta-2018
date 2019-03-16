@@ -18,7 +18,7 @@ export default {
     Footer
   },
   head: {
-    title: 'Hélène Ta Portfolio 2018'
+    title: 'Hélène Ta - Projects that make me proud'
   }
 };
 </script>

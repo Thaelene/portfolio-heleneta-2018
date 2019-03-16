@@ -23,7 +23,7 @@ module.exports = {
         hid: 'keywords',
         name: 'keywords',
         content:
-          'front-end developer, front-end, portfolio, vuejs, nuxt, javascript, development'
+          'front-end developer, front-end, project manager, product owner, portfolio, vuejs, nuxt, javascript, development'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

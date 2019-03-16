@@ -17,13 +17,13 @@ export default {
     About
   },
   head: {
-    title: 'About Hélène Ta - 2018 Portfolio'
+    title: 'Hélène Ta - My vision, my motivation and my commitment'
   },
   meta: {
     hid: 'description',
     name: 'description',
     content:
-      "Hi, I'm Hélène Ta and this is a short description of what I do best. I'm Looking for a 4-month internship from July to October 2018."
+      "Hi, I'm Hélène Ta and this is a short description of what I do best. I'm Looking for a 6-month internship from June to December 2019."
   }
 };
 </script>
