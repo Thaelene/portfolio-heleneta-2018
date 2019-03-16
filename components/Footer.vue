@@ -14,7 +14,6 @@
         </a></li>
       </ul>
     </nav>
-    <p class="footer_bye">See you soon</p>
   </footer>
 </template>
 
@@ -70,10 +69,8 @@ export default {};
   ul {
     li {
       padding: 0 2rem;
+      display: inline-block;
 
-      @include responsive($md) {
-        display: inline-block;
-      }
 
       svg {
         fill: #666;

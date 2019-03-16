@@ -136,9 +136,13 @@ export default {
             opacity: 1,
             y: -15
           })
-          .to(this.$refs.projectDescription, 0.3, {
+          .to(this.$refs.projectDescriptionLeft, 0.3, {
             opacity: 1,
-            y: -15
+            x: 0
+          })
+          .to(this.$refs.projectDescriptionRight, 0.3, {
+            opacity: 1,
+            x: 0
           })
           .to(this.$refs.projectRole, 0.3, {
             opacity: 1,

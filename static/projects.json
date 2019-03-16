@@ -27,7 +27,7 @@
       "second": "This is an on-going project and the mobile app will be launched soon. Stay tuned !"
     },"role": "Developer",
     "image": "hkind.jpg",
-    "imageAlt": "Sabre France equipment picture"
+    "imageAlt": "hkind'logo"
   },
   {
     "link": "#",
@@ -43,6 +43,6 @@
     },
     "role": "Project Manager / Design Thinking",
     "image": "candriam.png",
-    "imageAlt": "Screenshot from Space traveler game"
+    "imageAlt": "Candriam's logo"
   }
 ]
