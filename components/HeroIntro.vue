@@ -10,7 +10,7 @@
       <p class="title_important">
         I am looking for a 6-month internship where we can work together to build rewarding projects.
       </p>
-      <div class="btn-wrapper" ref="btnCopy">
+      <!-- <div class="btn-wrapper" ref="btnCopy">
         <button 
           class="btn-copy"
           @click="triggerRevealAnimation"
@@ -21,7 +21,7 @@
         </button>
         <span class="copy-details">copied ;)</span>
         <span class="copy-details--hovered" v-if="isHovered">Click to copy hello@heleneta.com</span>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -76,7 +76,6 @@ export default {
     },
 
     triggerRevealAnimation(){
-      navigator.clipboard.writeText('hello@heleneta.com');
       const timeline = new TimelineMax()
         .to('.copy-details', 1, { opacity: 1, y: '0%' })
         .staggerTo('.copy-details', 1, { opacity: 0})
