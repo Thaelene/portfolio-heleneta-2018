@@ -29,11 +29,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.about {
-  @include responsive ($md) {
-    height: 100vh;
-  }
-}
 .container {
   display: flex;
   flex-direction: column;

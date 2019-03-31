@@ -12,7 +12,7 @@
       <h1 class="about_title" ref="aboutTitle">Hello there,</h1>
       <div class="about_description" ref="aboutDescription">
         <p>
-          My name is Hélène Ta, a 23-year-old front-end developer and a 4th year student at 
+          My name is Hélène Ta, a 23-year-old aspiring to be a product owner and a 4th year student at 
           <a href="https://www.hetic.net/" target="black" rel="noopener" class="about_link nav_link">Hetic</a>. 
           Ex front-end developer intern at <a href="http://gremlinworks.co.uk/" target="black" rel="noopener" class="about_link nav_link">gremlin works</a> (Taipei) & 
           <a href="https://www.basaltiq.fr" target="black" rel="noopener" class="about_link nav_link">Basaltiq</a> (Paris). 
@@ -21,7 +21,7 @@
           For two years now, I thrive as a front end developer and a project manager. I enjoy overviewing a project from scratch, from finding the right idea to creating it.
         </p>
         <p>
-          As both front end developer and PM, I understand technical issues since the very beginning and I am able to advise and offer insights 
+          I also understand technical issues since the very beginning and I am able to advise and offer insights 
           early on, and save time, money and ressources. This is why I enjoy so much working as both, grasping the user’s needs, understand 
           the client’s vision and developing it. 
         </p>

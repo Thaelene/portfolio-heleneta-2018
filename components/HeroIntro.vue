@@ -4,16 +4,15 @@
     <div class="heroIntro_title" ref="heroIntroTitle">
       <h2 class="title_top">Hi,</h2>
       <p class="title_text">
-        I am a 4th year student working as front end developer with strong UX input. Producing userful and intuitive experiences are my everyday victories.
+        I am a 4th year student working as project manager and front end developer with strong UX input. Producing userful and intuitive experiences are my everyday victories.
         I enjoy being part of the conception phase where I can match the perfect feature to the user’s need.
       </p>
       <p class="title_important">
-        I am looking for a 6-month internship where we can work on a product together.
+        I am looking for a 6-month internship where we can work together to build rewarding projects.
       </p>
       <div class="btn-wrapper" ref="btnCopy">
         <button 
           class="btn-copy"
-          :v-clipboard="copyData"
           @click="triggerRevealAnimation"
           @mouseover="isHovered = true"
           @mouseleave="isHovered = false"
@@ -77,7 +76,7 @@ export default {
     },
 
     triggerRevealAnimation(){
-      console.log('hi')
+      navigator.clipboard.writeText('hello@heleneta.com');
       const timeline = new TimelineMax()
         .to('.copy-details', 1, { opacity: 1, y: '0%' })
         .staggerTo('.copy-details', 1, { opacity: 0})
@@ -85,7 +84,6 @@ export default {
   },
   data(){
     return {
-      copyData: 'hello@heleneta.com',
       isHovered: false,
     }
   },

@@ -3,7 +3,7 @@
         <nuxt-link to="/">
           <div class="header_logo">
            <span class="logo_name">Hélène Ta</span>
-            <span class="logo_title">Front-end developer</span>
+            <span class="logo_title">Product owner & Front-end developer</span>
           </div>
         </nuxt-link>
         <div class="header_nav">
