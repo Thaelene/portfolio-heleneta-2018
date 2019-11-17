@@ -12,17 +12,17 @@
       <h1 class="about_title" ref="aboutTitle">Hello there,</h1>
       <div class="about_description" ref="aboutDescription">
         <p>
-          My name is Hélène Ta, a 23-year-old aspiring to be a product owner and a 4th year student at 
+          My name is Hélène Ta, a 24-year-old interactive producer at <a href="https://www.makemepulse.com/" target="black" rel="noopener" class="about_link nav_link">makemepulse</a> and a 5th year student at 
           <a href="https://www.hetic.net/" target="black" rel="noopener" class="about_link nav_link">Hetic</a>. 
-          Ex front-end developer intern at <a href="http://gremlinworks.co.uk/" target="black" rel="noopener" class="about_link nav_link">gremlin works</a> (Taipei) & 
+          Formely front-end developer intern at <a href="http://gremlinworks.co.uk/" target="black" rel="noopener" class="about_link nav_link">gremlin works</a> (Taipei) & 
           <a href="https://www.basaltiq.fr" target="black" rel="noopener" class="about_link nav_link">Basaltiq</a> (Paris). 
         </p>
         <p>
-          For two years now, I thrive as a front end developer and a project manager. I enjoy overviewing a project from scratch, from finding the right idea to creating it.
+          For two years now, I thrive as a project manager. I enjoy overviewing a project from scratch, from finding the right idea to producing it with the amazing help of my teams.
         </p>
         <p>
           I also understand technical issues since the very beginning and I am able to advise and offer insights 
-          early on, and save time, money and ressources. This is why I enjoy so much working as both, grasping the user’s needs, understand 
+          early on, to save time, money and ressources. This is why I enjoy so much working in a studio, grasping the user’s needs, understand 
           the client’s vision and developing it. 
         </p>
       </div>
@@ -30,17 +30,11 @@
   </div>
 
    <div class="about__largeContent">
-     <p class="about_textLarge" ref="aboutLarge">For the last few years, I am committed to help climate change and to advocate for sex equality. I also founded with three friends the Show&Tell, which is conferences intended as an introduction to web 
+     <p class="about_textLarge" ref="aboutLarge">For the last few years, I am committed to the protection of the environnement and advocate for gender equality from daily actions to taking part of demonstrations. I also founded with three friends the Show&Tell, which is conferences intended as an introduction to web 
        related subjects through different actors and experiences.
-      </p>
-      <p class="about_important" ref="aboutImportant">
-        I’m a looking for a 6-month internship from June to December 2019 where we can work together to build rewarding projects.
       </p>
       <nav class="about_socials" ref="aboutSocials">
         <ul>
-          <li>
-            <a href="https://github.com/Thaelene" target="blank" rel="noopener" class="nav_link">Github</a>
-          </li>
           <li>
             <a href="https://www.instagram.com/tahelene/" target="blank" rel="noopener" class="nav_link">Instagram</a>
             </li>
@@ -52,8 +46,6 @@
           </li>
       </ul>
       </nav>
-
-      <p class="credits" ref="aboutCredits">Thanks to <a href="https://dribbble.com/tranminhvillageois" alt="Tran Minh Villageois Dribbble" class="nav_link">Tran Minh Villageois</a> for designing this portfolio.</p>
     </div>
 </div>
   
@@ -87,7 +79,7 @@ export default {
         )
         .to(
           this.$refs.aboutPortrait,
-          0.8,
+          0.7,
           {
             width: '100%'
           },
@@ -105,14 +97,7 @@ export default {
           opacity: 1,
           y: -15
         })
-        .to(this.$refs.aboutImportant, 0.3, {
-          opacity: 1,
-          y: -15
-        })
         .to(this.$refs.aboutSocials, 0.3, {
-          opacity: 1
-        })
-        .to(this.$refs.aboutCredits, 0.3, {
           opacity: 1
         });
       return tween;

@@ -1,24 +1,21 @@
 <template>
-  <div>
-    <Hero/>
-    <Projects/>
-    <Footer/>
+  <div class="container">
+    <Header/>
+    <About/>
   </div>
 </template>
 
 <script>
-import Hero from '~/components/Hero.vue';
-import Projects from '~/components/Projects.vue';
-import Footer from '~/components/Footer.vue';
+import About from '~/components/About.vue';
+import Header from '~/components/Header.vue';
 
 export default {
   components: {
-    Hero,
-    Projects,
-    Footer
+    Header,
+    About
   },
   head: {
-    title: 'Hélène Ta - Projects that make me proud'
+    title: 'Hélène Ta - Interactive Producer'
   }
 };
 </script>

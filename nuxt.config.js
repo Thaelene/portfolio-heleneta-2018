@@ -9,7 +9,7 @@ module.exports = {
     htmlAttrs: {
       lang: 'eng'
     },
-    title: 'Hélène Ta - A dedicated front-end developer',
+    title: 'Hélène Ta - Interactive Producer at makemepulse',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,13 +17,13 @@ module.exports = {
         hid: 'description',
         name: 'description',
         content:
-          "Hi, I'm Hélène Ta, a dedicated front-end developer. I'm looking for a 6-month internship from June to December 2019."
+          "Hi, I'm Hélène Ta, an interactive producer at makemepulse"
       },
       {
         hid: 'keywords',
         name: 'keywords',
         content:
-          'front-end developer, front-end, project manager, product owner, portfolio, vuejs, nuxt, javascript, development'
+          'interactive producer, project manager, portfolio, vuejs, nuxt'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
